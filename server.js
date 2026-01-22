@@ -64,5 +64,6 @@ app.post('/ask', async (req, res) => {
     }
 });
 
-const PORT = 3000;
-app.listen(PORT, () => console.log(`✅ Serveur IA connecté à Mistral sur http://localhost:${PORT}`));
+// On laisse Render choisir le port (process.env.PORT) sinon on prend 3000
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`✅ Serveur IA lancé sur le port ${PORT}`));
